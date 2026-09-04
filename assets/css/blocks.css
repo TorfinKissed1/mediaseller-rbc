@@ -892,30 +892,6 @@ body.is-menu-open {
   color: var(--ms-ink-muted);
 }
 
-.site-footer__studio {
-  border-top: 1px solid #373737;
-}
-
-.site-footer__studio .container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 74px;
-}
-
-.site-footer__studio-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--ms-text-body);
-  line-height: var(--ms-text-body-lh);
-}
-
-.site-footer__studio-logo {
-  width: 80px;
-  height: 16px;
-}
-
 @media (max-width: 1023px) {
   .site-footer__base {
     padding: 64px 0 40px;
