@@ -1,0 +1,219 @@
+/* ---------- Токены ---------- */
+
+:root {
+  --ms-bg: #ffffff;
+  --ms-ink: #1a1a1a;
+  --ms-ink-muted: #767676;
+  --ms-ink-faint: #b4b4b4;
+  --ms-surface: #f5f5f4;
+  --ms-surface-alt: #efefee;
+  --ms-line: #e6e6e4;
+  --ms-accent: #ffeb36;
+  --ms-accent-deep: #f4dc10;
+
+  --ms-font: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --ms-text-display: 40px;
+  --ms-text-display-lh: 44px;
+  --ms-text-title: 32px;
+  --ms-text-title-lh: 36px;
+  --ms-text-subtitle: 24px;
+  --ms-text-subtitle-lh: 28px;
+  --ms-text-body: 17px;
+  --ms-text-body-lh: 25px;
+  --ms-text-ui-lh: 21px;
+  --ms-text-caption: 15px;
+  --ms-text-caption-lh: 19px;
+
+  --ms-container: 1312px;
+  --ms-gutter: 32px;
+  --ms-block-pt: 72px;
+  --ms-block-pb: 56px;
+  --ms-radius: 12px;
+  --ms-radius-pill: 40px;
+  --ms-tabs-h: 69px;
+}
+
+/* ---------- Сброс ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+
+  scroll-padding-top: var(--ms-tabs-h);
+}
+
+body {
+  margin: 0;
+  background: var(--ms-bg);
+  color: var(--ms-ink);
+  font-family: var(--ms-font);
+  font-size: var(--ms-text-body);
+  line-height: var(--ms-text-body-lh);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ms-ink);
+  outline-offset: 3px;
+}
+
+/* ---------- Типографика ---------- */
+
+.ms-title {
+  font-size: var(--ms-text-title);
+  line-height: var(--ms-text-title-lh);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.ms-subtitle {
+  font-size: var(--ms-text-subtitle);
+  line-height: var(--ms-text-subtitle-lh);
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.ms-lead {
+  font-size: var(--ms-text-body);
+  line-height: var(--ms-text-body-lh);
+}
+
+.ms-caption {
+  font-size: var(--ms-text-caption);
+  line-height: var(--ms-text-caption-lh);
+}
+
+.ms-muted {
+  color: var(--ms-ink-muted);
+}
+
+/* ---------- Сетка ---------- */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--ms-container) + var(--ms-gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--ms-gutter);
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--ms-gutter) / -2);
+}
+
+.section__col {
+  padding: 0 calc(var(--ms-gutter) / 2);
+  width: 100%;
+}
+
+.section__col--1of3 {
+  width: 33.3333%;
+}
+
+.section__col--2of3 {
+  width: 66.6667%;
+}
+
+.section__col--1of2 {
+  width: 50%;
+}
+
+.divider {
+  height: 1px;
+  background: var(--ms-line);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Адаптив ---------- */
+
+@media (max-width: 1023px) {
+  :root {
+    --ms-text-display: 32px;
+    --ms-text-display-lh: 36px;
+    --ms-text-title: 26px;
+    --ms-text-title-lh: 30px;
+    --ms-block-pt: 48px;
+    --ms-block-pb: 40px;
+    --ms-gutter: 24px;
+  }
+
+  .section__col--1of3,
+  .section__col--2of3,
+  .section__col--1of2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  :root {
+    --ms-text-title: 24px;
+    --ms-text-title-lh: 28px;
+    --ms-gutter: 16px;
+  }
+}
