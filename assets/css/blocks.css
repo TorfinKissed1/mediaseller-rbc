@@ -388,19 +388,19 @@ body.is-menu-open {
 }
 
 .product--online::before {
-  background-image: url("../img/product-online.svg");
+  background-image: url("../img/product-online.png");
 }
 
 .product--tv::before {
-  background-image: url("../img/product-tv.svg");
+  background-image: url("../img/product-tv.png");
 }
 
 .product--press::before {
-  background-image: url("../img/product-press.svg");
+  background-image: url("../img/product-press.png");
 }
 
 .product--events::before {
-  background-image: url("../img/product-events.svg");
+  background-image: url("../img/product-events.png");
 }
 
 .product__title {
