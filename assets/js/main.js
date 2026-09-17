@@ -67,16 +67,18 @@
     var next = document.querySelector('[data-slider-next]');
     var progress = document.querySelector('[data-slider-progress]');
     var progressBar = progress && progress.querySelector('.videos__progress-bar');
+    var controls = document.querySelector('.videos__controls');
     var total = root.children.length;
 
     var slider = new KeenSlider(root, {
       loop: false,
-      slides: { perView: 1.15, spacing: 16 },
+      slides: { perView: fitPerView(1.15), spacing: 16 },
       breakpoints: {
-        '(min-width: 600px)': { slides: { perView: 1.6, spacing: 24 } },
-        '(min-width: 1024px)': { slides: { perView: 2.2, spacing: 32 } }
+        '(min-width: 600px)': { slides: { perView: fitPerView(1.6), spacing: 24 } },
+        '(min-width: 1024px)': { slides: { perView: fitPerView(2.2), spacing: 32 } }
       },
       created: syncControls,
+      optionsChanged: syncControls,
       slideChanged: syncControls
     });
 
@@ -87,12 +89,20 @@
       next.addEventListener('click', function () { slider.next(); });
     }
 
+    function fitPerView(perView) {
+      return Math.min(perView, total);
+    }
+
     function syncControls(instance) {
       var details = instance.track.details;
       var current = details.rel;
       var atEnd = current >= details.maxIdx;
 
       pauseVideos(null);
+
+      if (controls) {
+        controls.hidden = details.maxIdx === 0;
+      }
 
       if (progressBar) {
         var inView = details.slides.reduce(function (sum, slide) {
