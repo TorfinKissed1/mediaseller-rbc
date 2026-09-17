@@ -38,7 +38,7 @@
   flex-direction: column;
   min-height: min(100vh, 1080px);
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.84)),
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     #0b1116 url("../img/hero-bg.jpg") center / cover no-repeat;
   color: #fff;
 }
